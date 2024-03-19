@@ -1,0 +1,16 @@
+{
+    "autoload": {
+        "psr-4": {
+            "WebApp\\": "src/"
+        }
+    },
+    "name": "nikita/mrpeasy",
+    "authors": [
+        {
+            "name": "nikita",
+            "email": "nikita@singleton.ee"
+        }
+    ],
+    "require": {
+    }
+}
