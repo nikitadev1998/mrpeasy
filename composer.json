@@ -1,18 +1,20 @@
 {
-    "autoload": {
-        "psr-4": {
-            "WebApp\\": "src/"
-        }
-    },
-    "name": "nikita/mrpeasy",
-    "authors": [
-        {
-            "name": "nikita",
-            "email": "nikita@singleton.ee"
-        }
-    ],
-    "require": {
-      "ext-sqlite3": "*",
-      "ext-pdo": "*"
+  "autoload": {
+    "psr-4": {
+      "WebApp\\": "src/",
+      "ConsoleApp\\": "console/"
     }
+  },
+  "name": "nikita/mrpeasy",
+  "authors": [
+    {
+      "name": "nikita",
+      "email": "nikita@singleton.ee"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "^9.5",
+    "ext-sqlite3": "*",
+    "ext-pdo": "*"
+  }
 }
