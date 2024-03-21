@@ -19,7 +19,7 @@ class User extends ActiveRecord
      */
     public function validatePassword($password): bool
     {
-        return password_verify($this->password_hash, $this->hashPassword($password));
+        return password_verify($password, $this->password_hash);
     }
 
     /**
@@ -44,5 +44,39 @@ class User extends ActiveRecord
     {
         $this->password_hash = $this->hashPassword($password);
         return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public static function getTableName(): string
+    {
+        return 'user';
+    }
+
+    /**
+     * @param $attributes
+     * @return User|null
+     */
+    public static function findOne($attributes): ?ActiveRecord
+    {
+        return parent::findOne($attributes);
+    }
+
+    /**
+     * @param array $attributes
+     * @return User
+     */
+    public static function findOrCreate(array $attributes): ActiveRecord
+    {
+        return parent::findOrCreate($attributes);
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 }

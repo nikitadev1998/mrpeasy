@@ -2,35 +2,28 @@
 
 use WebApp\Models\LoginForm;
 
+
 /* @var $username string */
 /* @var $errorMessage string */
+/* @var $password string */
 ?>
-<!-- The Modal -->
 
-<div id="myModal" class="modal">
+<div class="wrapper">
 
-    <!-- Modal content -->
+    <?php if (!empty($errorMessage)): ?>
+        Error: <?= $errorMessage ?>
+    <?php endif; ?>
 
-    <div class="modal-content">
-
-        <?php if (!empty($errorMessage)): ?>
-            <span class="close">&times;</span> Error: <?= $errorMessage ?>
-        <?php endif; ?>
-
-        <form method="post">
-
-            <label for="username"><?= LoginForm::attributeLabels()['username'] ?></label>
-
-            <input type="text" id="username" name="username" value="<?= $username ?? '' ?>" required>
-
-            <label for="password"><?= LoginForm::attributeLabels()['password'] ?></label>
-
-            <input type="password" id="password" name="password" value="" required>
-
-            <input  type="submit" value="Login">
-
-        </form>
-
-    </div>
-
+    <form method="post" class="login">
+        <p class="title">Log in</p>
+        <input class="field" type="text" id="username" name="username"
+               placeholder="<?= LoginForm::attributeLabels()['username'] ?>" autofocus required/>
+        <i class="bi-person-fill"></i>
+        <input class="field" type="password" id="password" name="password"
+               placeholder="<?= LoginForm::attributeLabels()['password'] ?>" required/>
+        <i class="bi-lock"></i>
+        <input class="button" type="submit" value="Log in"/>
+    </form>
+    </p>
 </div>
+

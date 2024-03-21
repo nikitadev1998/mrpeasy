@@ -17,6 +17,11 @@ class LoginForm
      */
     public function validate(): bool
     {
+        // TODO: validation
+        // enable 'show password' function to end user
+        // add additional rules to make password stronger
+        // implement verifyPassword attribute
+        // length validation of the values
         return true;
     }
 
@@ -45,14 +50,20 @@ class LoginForm
         $user = User::findOrCreate(['username' => $this->username]);
         if (empty($user->id)) {
             $user->setPassword($this->password);
-            if ($user->save()) {
-                // session start
+            if ($id = $user->save()) {
+                $_SESSION['username'] = $user->username;
+                $_SESSION['counter'] = $user->counter ?? 0;
+                return true;
             }
 
             $this->errorMessage = 'Failed to login: saving failed' . password_verify($this->password, $user->hashPassword('qwerty'));
             return false;
         } elseif ($user->validatePassword($this->password)) {
             // session start
+            if (!isset($_SESSION['username'])) {
+                $_SESSION['username'] = $user->username;
+                $_SESSION['counter'] = $user->counter;
+            }
         } else {
             $this->errorMessage = 'Failed to login: wrong password';
             return false;
@@ -68,7 +79,8 @@ class LoginForm
     {
         return [
             'username' => $this->username,
-            'errorMessage' => $this->errorMessage
+            'errorMessage' => $this->errorMessage,
+            'password' => $this->password
         ];
     }
 

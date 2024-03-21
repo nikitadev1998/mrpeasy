@@ -12,5 +12,7 @@
         }
     ],
     "require": {
+      "ext-sqlite3": "*",
+      "ext-pdo": "*"
     }
 }
