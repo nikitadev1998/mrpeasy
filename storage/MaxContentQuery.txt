@@ -1,0 +1,7 @@
+SELECT ct1.* FROM content_table ct1
+INNER JOIN (
+    SELECT
+        id, MAX(version) AS max_version
+    FROM content_table
+    GROUP BY id
+) ct2 ON ct1.id = ct2.id AND ct1.version = ct2.max_version;
