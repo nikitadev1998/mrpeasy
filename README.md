@@ -11,6 +11,7 @@
 
 1. PHP >v7.2
 2. Sqlite3 - download the latest version https://www.sqlite.org/download.html
+3. Composer - installation instruction https://getcomposer.org/download/
 
 ## **Tasks**
 
@@ -31,13 +32,13 @@
 
 ### **Counter web application**
 
-Since no framework was specified I decided to build the core functionality
-by myself and do not use libraries and frameworks for this web application.
-######**Such approach advantages:**
-1. No redundant functionality in the codebase
-2. Challenge myself writing things from the scratch
-######**Disadvantages:**
-1. Time-consuming, using the framework thing would go several times faster.
-
 1. `cd mrpeasy/public`
 2. `php -S localhost:9999`
+
+Since no framework was specified I decided to build the core functionality
+by myself and do not use libraries and frameworks for this web application.
+###### **Such approach advantages:**
+1. No redundant functionality in the codebase
+2. Challenge myself writing things from the scratch
+###### **Disadvantages:**
+1. Time-consuming, using the framework thing would go several times faster even for such small project.

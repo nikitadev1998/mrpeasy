@@ -18,7 +18,7 @@ class LoginForm
     public function validate(): bool
     {
         // TODO: validation
-        // enable 'show password' function to end user
+        // enable 'show password' function to end user for best user experience
         // add additional rules to make password stronger
         // implement verifyPassword attribute
         // length validation of the values

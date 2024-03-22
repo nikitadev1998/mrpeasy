@@ -1,8 +1,3 @@
-<?php
-
-?>
-
-
 <div class="container d-flex flex-wrap align-items-center justify-content-center">
     <div class="d-flex align-items-center col-md-6 flex-column">
         <div class="counter"><b id="counter"></b></div>
@@ -17,8 +12,8 @@
     const btn = document.getElementById('counter-increaser');
     counterIncrease = function () {
         fetch('counter-increment').then(response => {
-            console.log(response);
             if (response.status === 200) {
+                // correct approach - get updated counter from endpoint response
                 counter.innerText = Number(document.getElementById('counter').innerText) + 1;
             }
         }).catch((error) => {

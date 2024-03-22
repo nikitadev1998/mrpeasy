@@ -23,12 +23,14 @@ class HomeController extends Controller
 
     public function actionLogin()
     {
-        $loginForm = new LoginForm();
+        if (isset($_SESSION['username'])) {
+            $this->redirect('index');
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $this->render('login');
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            $loginForm = new LoginForm();
             if ($loginForm->load($_POST) && $loginForm->validate()) {
                 if ($loginForm->signIn()) {
                     $this->redirect('index');

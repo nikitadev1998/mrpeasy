@@ -2,7 +2,6 @@
 
 namespace ConsoleApp\tests;
 
-use ConsoleApp\ConsoleController;
 use ConsoleApp\TagsParser;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
@@ -25,7 +24,7 @@ class ParseTagsTest extends TestCase
     public function testSpacesInTagThrowsException()
     {
         $this->expectException(InvalidArgumentException::class);
-        $model = new TagsParser("[TEST TAG:1]1[/TEST TAG]");
+        new TagsParser("[TEST TAG:1]1[/TEST TAG]");
     }
 
     public function testEmptyDataThrowsException()
