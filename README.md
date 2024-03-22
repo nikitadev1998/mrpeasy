@@ -41,4 +41,4 @@ by myself and do not use libraries and frameworks for this web application.
 1. No redundant functionality in the codebase
 2. Challenge myself writing things from the scratch
 ###### **Disadvantages:**
-1. Time-consuming, using the framework thing would go several times faster even for such small project.
+1. Time-consuming, using the framework implementation would go several times faster even for such small project.
