@@ -111,5 +111,4 @@ class ParseTagsTest extends TestCase
             isset($parsedArray[$tag]['description']) && $parsedArray[$tag]['description'] == $description &&
             isset($parsedArray[$tag]['data']) && $parsedArray[$tag]['data'] == $data);
     }
-
 }

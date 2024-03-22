@@ -55,8 +55,6 @@ class TagsParser
             throw new InvalidArgumentException("Description should not be empty for $text");
         } elseif (empty($tag)) {
             throw new InvalidArgumentException("Tag should not be empty for $text");
-        } elseif (!isset($endTag)) {
-            throw new InvalidArgumentException("Input invalid format for $text");
         } elseif (str_replace('/', '', $endTag) != $tag) {
             throw new InvalidArgumentException("Input invalid TAG format for $text");
         } elseif (is_array($data) || empty($data)) {
